@@ -1,6 +1,3 @@
-const fs = require("fs")
-
-
 const findBestLinkStation = (linkStations, point) => {
 
     if (!linkStations || !point || linkStations.length === 0) {
@@ -16,18 +13,11 @@ const findBestLinkStation = (linkStations, point) => {
         }
     })
 
-    if (biggestPower > 0) {
+    if (biggestPower > 0)
         return bestLinkStation
-    }
 
     return null
 }
 
-const parseLinkStationFile = (filename) =>{
-    const str = fs.readFileSync(filename, 'utf-8')
-    console.log(str)
-}
-
-module.exports.findBestLinkStation = findBestLinkStation
-module.exports.parseLinkStationFile = parseLinkStationFile
+module.exports = findBestLinkStation
 
