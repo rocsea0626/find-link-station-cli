@@ -1,5 +1,5 @@
-const LinkStation = require("../LinkStation")
-const Point = require("../Point")
+const LinkStation = require("../src/LinkStation")
+const Point = require("../src/Point")
 const findBestLinkStation = require("../index")
 
 

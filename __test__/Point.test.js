@@ -1,4 +1,4 @@
-const Point = require("../Point")
+const Point = require("../src/Point")
 
 
 describe('Test Point', function () {

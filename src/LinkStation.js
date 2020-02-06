@@ -1,7 +1,6 @@
 class LinkStation {
 
     constructor(x, y, r) {
-
         if(typeof x !== 'number' || typeof y !== 'number' || typeof r !== 'number')
             throw new Error("LinkStation: Invalid parameter type")
 
@@ -26,7 +25,7 @@ class LinkStation {
     }
 
     toString() {
-        return `LinkStation(x=${this.x}, y=${this.y}, r=${this.r})`
+        return `LinkStation: (x=${this.x}, y=${this.y}, r=${this.r})`
     }
 }
 
