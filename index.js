@@ -1,3 +1,5 @@
+const fs = require("fs")
+
 
 const findBestLinkStation = (linkStations, point) => {
 
@@ -21,5 +23,11 @@ const findBestLinkStation = (linkStations, point) => {
     return null
 }
 
-module.exports = findBestLinkStation
+const parseLinkStationFile = (filename) =>{
+    const str = fs.readFileSync(filename, 'utf-8')
+    console.log(str)
+}
+
+module.exports.findBestLinkStation = findBestLinkStation
+module.exports.parseLinkStationFile = parseLinkStationFile
 

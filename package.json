@@ -1,11 +1,14 @@
 {
   "name": "find-link-station-cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "jest": "jest --watchAll"
+  },
+  "dependencies": {
+    "commander": "^4.1.1"
   },
   "devDependencies": {
     "jest": "^24.9.0"
