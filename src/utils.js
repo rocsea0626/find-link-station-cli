@@ -1,5 +1,5 @@
 const fs = require("fs")
-const LinkStation = require("./src/LinkStation")
+const LinkStation = require("./LinkStation")
 
 /**
  * Read array of LinkStations defined in a text file
@@ -27,15 +27,22 @@ const parseLinkStationFile = (filename) => {
 
 }
 
-const printAnswer = (bestStation, point) => {
-    if (bestStation)
+/**
+ * Print answer according to required format
+ * @param linkStation
+ * @param point
+ */
+const printAnswer = (linkStation, point) => {
+    if (linkStation)
         console.log(
-            `Best link station for point ${point.x}, ${point.y} is ${bestStation.x}, ${bestStation.y} with power ${bestStation.power(point)}`
+            `Best link station for point ${point.x}, ${point.y} is ${linkStation.x}, ${linkStation.y} with power ${linkStation.power(point)}`
         )
     else
         console.log(`No link station within reach for point ${point.x}, ${point.y}`)
 }
 
 
-module.exports.parseLinkStationFile = parseLinkStationFile
-module.exports.printAnswer = printAnswer
+module.exports = {
+    parseLinkStationFile,
+    printAnswer
+}

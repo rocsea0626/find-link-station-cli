@@ -1,7 +1,7 @@
-const utils = require("./utils")
-const LinkStation = require("./src/LinkStation")
-const Point = require("./src/Point")
-const findBestLinkStation = require("./index")
+const utils = require("../src/utils")
+const LinkStation = require("../src/LinkStation")
+const Point = require("../src/Point")
+const findBestLinkStation = require("../index")
 
 const paramsLinkStations = [
     [0, 0, 10],
