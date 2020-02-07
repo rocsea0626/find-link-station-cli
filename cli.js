@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
 const utils = require('./src/utils')
-const findBestLinkStation = require('./index')
-const Point = require('./src/Point')
+const {
+    findBestLinkStation,
+    Point
+} = require('./index')
 const pkg = require('./package.json')
 const program = require('commander')
 

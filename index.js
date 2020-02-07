@@ -20,5 +20,9 @@ const findBestLinkStation = (linkStations, point) => {
     return null
 }
 
-module.exports = findBestLinkStation
+module.exports = {
+    LinkStation: require('./src/LinkStation'),
+    Point: require('./src/Point'),
+    findBestLinkStation
+}
 

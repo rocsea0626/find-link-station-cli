@@ -1,6 +1,8 @@
-const LinkStation = require("../src/LinkStation")
-const Point = require("../src/Point")
-const findBestLinkStation = require("../index")
+const {
+    findBestLinkStation,
+    LinkStation,
+    Point
+} = require("../index")
 
 
 describe('Test findBestLinkStation()', function () {

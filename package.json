@@ -1,7 +1,7 @@
 {
   "name": "find-link-station-cli",
   "version": "1.1.0",
-  "description": "",
+  "description": "Find the most suitable (with most power) link station for a device at given point [x,y].",
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",

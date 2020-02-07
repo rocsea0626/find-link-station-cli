@@ -30,3 +30,5 @@ npm run assignment-answer
     [10, 0, 12]
 ]
 ```
+
+## TODO, use as lib
