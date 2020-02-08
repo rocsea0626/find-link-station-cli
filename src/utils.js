@@ -2,7 +2,7 @@ const fs = require("fs")
 const LinkStation = require("./LinkStation")
 
 /**
- * Read array of LinkStations defined in a text file
+ * Parse array of LinkStations defined in a json file of a 2-dimensional array
  * Each LinkStation is defined as an array of [x, y, r]
  * Sample:
  * [
