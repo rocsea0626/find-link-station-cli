@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const utils = require('./src/utils')
+const utils = require('../src/utils')
 const {
     findBestLinkStation,
     Point
-} = require('./index')
-const pkg = require('./package.json')
+} = require('../index')
+const pkg = require('../package.json')
 const program = require('commander')
 
 
@@ -19,7 +19,7 @@ function commaSeparatedList(value, dummyPrevious) {
 program.version(pkg.version)
     .option('-i, --inputFile-stations <file>', 'text file with a 2-dimensional array which defines parameters for stations')
     .option('-p, --point <x,y>', 'x,y coordinates of a point without space', commaSeparatedList)
-    .option('-d, --debug', 'trigger debug mode')
+    .option('--verbose', 'print messages')
 
 try {
     program.parse(process.argv)

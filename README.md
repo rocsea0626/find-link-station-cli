@@ -5,12 +5,13 @@
 ```shell
 unzip find-link-station-cli
 cd find-link-station-cli
+npm link
 ```
 
 ## Usage
 
--   `node cli -i <file> -p 0,0` Find the best link station for point (0,0) with link stations defined in given file
--   `node cli -h` Print help
+-   `findstation -i <file> -p 0,0` Find the best link station for point (0,0) with link stations defined in given file
+-   `findstation -h` Print help
 -   `npm run assignment-answer` Print the answer for given assignment
 -   `npm test` Run all unit tests
 
@@ -18,7 +19,7 @@ cd find-link-station-cli
 
 ```shell
 # Find the best link station for point (0,0) with link stations in "link-stations"
-node cli -i link-stations -p 0,0
+findstation -i link-stations -p 0,0
 
 # Print the answer for given assignment
 npm run assignment-answer
@@ -31,4 +32,4 @@ npm run assignment-answer
 ]
 ```
 
-## TODO, use as lib
+## TODO，repository
