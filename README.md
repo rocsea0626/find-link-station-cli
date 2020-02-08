@@ -2,13 +2,13 @@
 
 ## Installation
 
-- zip file
+- from zip file
 ```shell
-unzip find-link-station-cli
+unzip find-link-station-cli.zip
 cd find-link-station-cli
 npm link
 ```
-- github
+- from github
 ```shell
 git clone https://github.com/rocsea0626/find-link-station-cli.git
 cd find-link-station-cli
