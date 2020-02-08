@@ -1,6 +1,5 @@
-const LinkStation = require("./src/LinkStation")
-const Point = require("./src/Point")
-const findBestLinkStation = require("./index")
+const utils = require("../src/utils")
+const {findBestLinkStation, Point, LinkStation} = require("../index")
 
 const paramsLinkStations = [
     [0, 0, 10],
@@ -23,14 +22,8 @@ try {
     paramsPoints.forEach((param) => {
         const point = new Point(...param)
         const bestStation = findBestLinkStation(linkStations, point)
-        if (bestStation)
-            console.log(
-                `Best link station for point ${point.x}, ${point.y} is ${bestStation.x}, ${bestStation.y} with power ${bestStation.power(point)}`
-            )
-        else
-            console.log(`No link station within reach for point ${point.x}, ${point.y}`)
+        utils.printAnswer(bestStation, point)
     })
 } catch (err) {
     console.log(`Failed, err= ${err}`)
 }
-

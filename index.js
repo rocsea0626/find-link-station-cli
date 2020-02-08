@@ -14,12 +14,15 @@ const findBestLinkStation = (linkStations, point) => {
         }
     })
 
-    if (biggestPower > 0) {
+    if (biggestPower > 0)
         return bestLinkStation
-    }
 
     return null
 }
 
-module.exports = findBestLinkStation
+module.exports = {
+    LinkStation: require('./src/LinkStation'),
+    Point: require('./src/Point'),
+    findBestLinkStation
+}
 
