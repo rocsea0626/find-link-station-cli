@@ -2,7 +2,7 @@
 
 const utils = require('../src/utils')
 const {
-    findBestLinkStation,
+    findMostPowerLinkStation,
     Point
 } = require('../index')
 const pkg = require('../package.json')
@@ -19,7 +19,6 @@ function commaSeparatedList(value, dummyPrevious) {
 program.version(pkg.version)
     .option('-i, --inputFile-stations <file>', 'text file with a 2-dimensional array which defines parameters for stations')
     .option('-p, --point <x,y>', 'x,y coordinates of a point without space', commaSeparatedList)
-    .option('--verbose', 'print messages')
 
 try {
     program.parse(process.argv)
@@ -38,7 +37,7 @@ try {
     const fileName = program.inputFileStations
     const linkStations = utils.parseLinkStationFile(fileName)
     const point = new Point(...program.point)
-    const bestStation = findBestLinkStation(linkStations, point)
+    const bestStation = findMostPowerLinkStation(linkStations, point)
 
     utils.printAnswer(bestStation, point)
 

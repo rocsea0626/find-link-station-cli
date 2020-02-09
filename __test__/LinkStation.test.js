@@ -33,6 +33,28 @@ describe('Test LinkStation.js', function () {
         })
     })
 
+    describe('valid constructor parameters', () => {
+        it("reach of link station equals 0", (done) => {
+            try {
+                const linkStation = new LinkStation(1, 2, 0)
+                expect(linkStation).toEqual(expect.anything())
+            } catch (err) {
+                expect(err).toBeUndefined()
+            }
+            done()
+        })
+
+        it("reach of link station is greater than 0", (done) => {
+            try {
+                const linkStation = new LinkStation(1, 5, 100.001)
+                expect(linkStation).toEqual(expect.anything())
+            } catch (err) {
+                expect(err).toBeUndefined()
+            }
+            done()
+        })
+    })
+
     describe('test _distance()', () => {
 
         it("valid paramter, all coordinates are integers", (done) => {
@@ -43,7 +65,6 @@ describe('Test LinkStation.js', function () {
                 expect(dist).toEqual(Math.sqrt(1 + 4))
             } catch (err) {
                 console.log(err)
-
                 expect(err).toBeUndefined()
             }
             done()
@@ -120,10 +141,23 @@ describe('Test LinkStation.js', function () {
         })
 
 
-        it("valid parameter, power === 0", (done) => {
+        it("valid parameter, power === 0, point out of reach", (done) => {
             try {
                 const linkStation = new LinkStation(0, 0, 1)
                 const point = new Point(1, 2)
+                const power = linkStation.power(point)
+                expect(power).toEqual(0)
+            } catch (err) {
+                console.log(err)
+                expect(err).toBeUndefined()
+            }
+            done()
+        })
+
+        it("valid parameter, power === 0, point on the border of reach", (done) => {
+            try {
+                const linkStation = new LinkStation(0, 2, 2)
+                const point = new Point(0, 0)
                 const power = linkStation.power(point)
                 expect(power).toEqual(0)
             } catch (err) {

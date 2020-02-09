@@ -17,6 +17,7 @@ git clone https://github.com/rocsea0626/find-link-station-cli.git
 - Create a symlink in the global folder 
 ```shell
 cd find-link-station-cli
+npm install
 npm link
 ```
 
@@ -25,9 +26,25 @@ npm link
 npm run assignment-answer
 ```
 
-- Find the best link station for point (0,0) with link stations in "link-stations"
+- Find the best link station for point (0,0) from sample link stations in "link-stations.json"
 ```shell
 findstation -i link-stations.json -p 0,0
+```
+
+- Find the best link station for point (0,0) from custom "my-link-stations.json"
+```shell
+# Create source input file for link stations
+touch my-link-statinos.json
+
+# Insert a 2-dimensional array in such format, [x, y, r]
+[
+    [0, 0, 10],
+    [20, 20, 5],
+    [10, 0, 12]
+]
+
+# Run command
+findstation -i my-link-stations.json -p 0,0
 ```
 
 
@@ -37,7 +54,7 @@ findstation -i link-stations.json -p 0,0
 -   `findstation -h` Print help
 -   `npm run assignment-answer` Print the answer for given assignment
 -   `npm test` Run all unit tests
--   Template for the source file of link stations
+-   Template for .json file of link stations, each link station is defined as [x, y, r]
 ```shell
 [
     [0, 0, 10],

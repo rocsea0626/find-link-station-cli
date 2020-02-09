@@ -1,5 +1,5 @@
 const utils = require("../src/utils")
-const {findBestLinkStation, Point, LinkStation} = require("../index")
+const {findMostPowerLinkStation, Point, LinkStation} = require("../index")
 
 const paramsLinkStations = [
     [0, 0, 10],
@@ -21,7 +21,7 @@ try {
 
     paramsPoints.forEach((param) => {
         const point = new Point(...param)
-        const bestStation = findBestLinkStation(linkStations, point)
+        const bestStation = findMostPowerLinkStation(linkStations, point)
         utils.printAnswer(bestStation, point)
     })
 } catch (err) {

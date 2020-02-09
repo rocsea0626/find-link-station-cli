@@ -14,9 +14,8 @@ class LinkStation {
 
     power(point) {
         const dist = this._distance(point)
-        if(dist > this.r)
+        if(dist >= this.r)
             return 0
-
         return Math.pow(this.r - dist, 2)
     }
 
