@@ -26,17 +26,17 @@ npm link
 npm run assignment-answer
 ```
 
-- Find the best link station for point (0,0) from sample link stations in "link-stations.json"
+- Find the best link station for point (0,0) from sample link stations in "sample-link-stations.json"
 ```shell
-findstation -i link-stations.json -p 0,0
+findstation -i sample-link-stations.json -p 0,0
 ```
 
 - Find the best link station for point (0,0) from custom "my-link-stations.json"
 ```shell
 # Create source input file for link stations
-touch my-link-statinos.json
+touch my-link-stations.json
 
-# Insert a 2-dimensional array in such format, [x, y, r]
+# Insert a 2-dimensional array in such format [x, y, r], to define an array of link stations
 [
     [0, 0, 10],
     [20, 20, 5],
@@ -62,3 +62,9 @@ findstation -i my-link-stations.json -p 0,0
     [10, 0, 12]
 ]
 ```
+
+## Folder Structure
+- ```__test__/``` unit test files
+- ```assignment/``` contains .js file that prints out answer for given task
+- ```bin/``` contains .js file to enable project to be used as command line program
+- ```index.js``` entry point of project

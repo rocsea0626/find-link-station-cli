@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 const utils = require('../src/utils')
+const pkg = require('../package.json')
+const program = require('commander')
 const {
     findMostPowerLinkStation,
     Point
 } = require('../index')
-const pkg = require('../package.json')
-const program = require('commander')
 
 
 function commaSeparatedList(value, dummyPrevious) {
@@ -16,12 +16,13 @@ function commaSeparatedList(value, dummyPrevious) {
     })
 }
 
-program.version(pkg.version)
-    .option('-i, --inputFile-stations <file>', 'text file with a 2-dimensional array which defines parameters for stations')
-    .option('-p, --point <x,y>', 'x,y coordinates of a point without space', commaSeparatedList)
-
 try {
-    program.parse(process.argv)
+
+    program.version(pkg.version)
+        .option('-i, --inputFile-stations <file>', '.json file defines parameters for link stations')
+        .option('-p, --point <x,y>', 'x,y coordinates of a point', commaSeparatedList)
+        .usage("-i <file> -p x,y")
+        .parse(process.argv)
 
     if (!program.inputFileStations) {
         console.log("missing input file for link stations")

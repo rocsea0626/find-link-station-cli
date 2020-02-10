@@ -3,7 +3,7 @@
  *
  * @param linkStations: array of LinkStation
  * @param point: instance of Point
- * @returns {null|LinkStation}
+ * @returns {undefined|LinkStation}
  */
 const findMostPowerLinkStation = (linkStations, point) => {
     if (!linkStations || !point || linkStations.length === 0) {
